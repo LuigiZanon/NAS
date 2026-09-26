@@ -1,0 +1,11 @@
+[workspace]
+members = [
+    "crates/*"
+]
+resolver = "2"
+
+# Configurações globais para otimizar compilações em modo release para as máquinas antigas
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
