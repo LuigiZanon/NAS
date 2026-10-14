@@ -1,6 +1,7 @@
 // crates/daemon/src/main.rs
 use common::{Node, NodeStatus, Result};
 use std::net::SocketAddr;
+// use storage::DiskManager; // TODO: Add storage dependency to Cargo.toml
 use tokio::time::{sleep, Duration};
 use uuid::Uuid;
 
@@ -17,7 +18,13 @@ async fn main() -> Result<()> {
         free_space_bytes: 500 * 1024 * 1024 * 1024, // 500 GB simulados
     };
 
-    println!("Nó inicializado: ID {} escutando em {}", my_node.id, my_node.address);
+    // let disk_manager = DiskManager::new("/tmp/nas_storage").await?;
+    // println!("Storage manager inicializado na pasta /tmp/nas_storage");
+
+    println!(
+        "Nó inicializado: ID {} escutando em {}",
+        my_node.id, my_node.address
+    );
 
     // Aqui entrarão os inicializadores reais de Storage, Network e Metadata
     // network::start_grpc_server(my_address).await?;
