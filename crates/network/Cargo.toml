@@ -1,6 +1,20 @@
 [package]
 name = "network"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [dependencies]
+common = { path = "../common" }
+storage = { path = "../storage" }
+tokio = { version = "1", features = ["full"] }
+tonic = { version = "0.14.6", features = ["transport"] }
+tonic-prost = "0.14.6"
+prost = "0.14.4"
+uuid = { version = "1", features = ["v4"] }
+
+[build-dependencies]
+tonic-prost-build = "0.14.6"
+
+[dev-dependencies]
+tempfile = "3.10"
+tokio-stream = { version = "0.1", features = ["net"] }

@@ -154,7 +154,7 @@ mod tests {
             "O sistema deveria ter bloqueado a leitura por hash incorreto!"
         );
 
-        // Verifica se o erro gerado é exatamente o CorruptedData esperado
+        // Verifica se o erro gerado é exatamente o CorruptedData esperhttps://gemini.google.com/app/80939529e28edffbado
         match result {
             Err(NasError::CorruptedData { chunk_id }) => {
                 assert_eq!(chunk_id, chunk.id.to_string());
